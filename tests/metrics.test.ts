@@ -1,3 +1,5 @@
+
+
 import * as assert from 'assert';
 import * as vscode from 'vscode';
 import sinon from 'sinon';
@@ -52,5 +54,18 @@ describe('System Monitor Extension - Métricas', () => {
             typeof item.text === 'string' && item.text.includes('Temp: 77°C')
         );
         assert.ok(found, 'Temperatura não exibida corretamente');
+    });
+
+    it('Não exibe temperatura quando não está disponível', async () => {
+        const si = require('systeminformation');
+        sandbox.stub(si, 'currentLoad').resolves({ currentLoad: 10 });
+        sandbox.stub(si, 'mem').resolves({ active: 1000, total: 4000 });
+        sandbox.stub(si, 'cpuTemperature').resolves({ main: null });
+        await extension!.activate();
+        const statusBarItems = (vscode.window as any)._statusBar?._items;
+        const found = statusBarItems && statusBarItems.some((item: any) =>
+            typeof item.text === 'string' && !item.text.includes('Temp')
+        );
+        assert.ok(found, 'Temperatura não deveria ser exibida quando não está disponível');
     });
 });

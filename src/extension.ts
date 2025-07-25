@@ -16,9 +16,11 @@ export function activate(context: vscode.ExtensionContext) {
 
             const cpuUsage = cpu.currentLoad.toFixed(1);
             const ramUsage = ((mem.active / mem.total) * 100).toFixed(1);
-            const tempCpu = temp.main ? `${temp.main.toFixed(0)}°C` : 'N/A';
-
-            statusBarItem.text = `CPU: ${cpuUsage}% | RAM: ${ramUsage}% | Temp: ${tempCpu}`;
+            let text = `CPU: ${cpuUsage}% | RAM: ${ramUsage}%`;
+            if (typeof temp.main === 'number' && !isNaN(temp.main)) {
+                text += ` | Temp: ${temp.main.toFixed(0)}°C`;
+            }
+            statusBarItem.text = text;
         } catch (err) {
             statusBarItem.text = `Erro ao ler dados`;
             console.error(err);
