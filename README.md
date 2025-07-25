@@ -1,116 +1,103 @@
 # 📌 System Monitor – VS Code Extension
 
-Esta é uma extensão para o Visual Studio Code que exibe, em tempo real, informações sobre o desempenho do seu computador diretamente na **barra de status** do VS Code.
+This is a Visual Studio Code extension that displays, in real time, information about your computer’s performance directly in the **status bar** of VS Code.
 
-Ele mostra:
+It shows:
 
-- ✅ Uso atual da CPU  
-- ✅ Uso de memória RAM  
-- ✅ Temperatura da CPU (quando disponível)
-
----
-
-## ✨ Funcionalidades
-
-- ✅ Atualização automática a cada 2 segundos  
-- ✅ Funciona no Windows, Linux e macOS  
-- ✅ Inicia junto com o VS Code e fica ativo até você fechar  
-- ✅ Leve e sem configurações complexas  
+- ✅ Current CPU usage
+- ✅ Memory (RAM) usage
+- ✅ CPU temperature (when available)
 
 ---
 
+## ✨ Features
 
-## 🧪 Como rodar os testes
+- ✅ Automatically updates every 2 seconds
+- ✅ Works on Windows, Linux, and macOS
+- ✅ Starts together with VS Code and stays active until you close it
+- ✅ Lightweight and no complex configuration required
 
-### Requisitos para testar
+---
 
-- Node.js instalado
-- Dependências de desenvolvimento instaladas:
+## 🧪 How to run the tests
 
-  ```bash
+### Requirements for testing
+
+- Node.js installed
+- Development dependencies installed:
+
   npm install --save-dev mocha @types/mocha ts-node sinon @types/sinon
-  ```
 
-- Recomenda-se rodar `npm install` para garantir todas as dependências do projeto.
+- It’s recommended to run `npm install` to ensure all project dependencies are installed.
 
-### Executando os testes
+### Running the tests
 
-No terminal, execute:
+In the terminal, run:
 
-```bash
-npm test
-```
+  npm test
 
-Ou, se preferir, rode apenas os testes com:
+Or, if you prefer, run only the tests with:
 
-```bash
-npm run test
-```
+  npm run test
 
-Os testes estão localizados na pasta `tests/` e cobrem tanto a criação visual do item na barra de status quanto a exibição dos valores de CPU, RAM e temperatura (mockados).
+The tests are located in the `tests/` folder and cover both the visual creation of the status bar item and the display of CPU, RAM, and temperature values (mocked).
 
 ---
 
-## 🚀 Como rodar em modo de desenvolvimento
+## 🚀 How to run in development mode
 
-1. **Pré‑requisitos:**
-   - [Node.js](https://nodejs.org/) instalado
-   - [Visual Studio Code](https://code.visualstudio.com/) instalado
+1. Prerequisites:
+   - Node.js installed
+   - Visual Studio Code installed
 
-2. **Instalar dependências:**
+2. Install dependencies:
 
-   ```bash
    npm install
-   ```
 
-3. **Compilar o TypeScript:**
+3. Compile TypeScript:
 
-   ```bash
    npm run compile
-   ```
 
-4. **Rodar no VS Code:**
-   - Pressione `F5` no VS Code
-   - Uma nova janela do VS Code vai abrir com a extensão carregada
-   - Confira no canto inferior direito da barra de status
-
----
-
-## 📦 Como empacotar
-
-Para gerar um `.vsix` e instalar manualmente:
-
-```bash
-npm install -g vsce
-vsce package
-```
-
-Depois, no VS Code:
-
-- Vá em **Extensões** (Ctrl+Shift+X)
-- Clique nos `...`
-- Selecione **Instalar do VSIX…** e escolha o arquivo gerado.
+4. Run in VS Code:
+   - Press F5 in VS Code
+   - A new window of VS Code will open with the extension loaded
+   - Check the bottom right corner of the status bar
 
 ---
 
-## 🛠 Tecnologias utilizadas
+## 📦 How to package
+
+To generate a .vsix file and install manually:
+
+  npm install -g vsce
+  vsce package
+
+Then, in VS Code:
+
+- Go to Extensions (Ctrl+Shift+X)
+- Click on the ...
+- Select Install from VSIX… and choose the generated file.
+
+---
+
+## 🛠 Technologies used
 
 - Visual Studio Code API
 - TypeScript
-- systeminformation para leitura de dados de hardware
+- systeminformation for hardware data reading
 
 ---
 
-## 🖥️ Compatibilidade
+## 🖥️ Compatibility
 
-- ✅ Windows  
-- ✅ Linux  
-- ✅ macOS  
+- ✅ Windows
+- ✅ Linux
+- ✅ macOS
 
-> *Observação:* a temperatura pode não estar disponível em todos os hardwares/sistemas.
+> Note: temperature may not be available on all hardware/systems.
 
 ---
 
-## 📜 Licença
+## 📜 License
 
-Este projeto está licenciado sob a licença MIT.
+This project is licensed under the MIT License.
