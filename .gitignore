@@ -1,0 +1,25 @@
+# Dependências do Node
+node_modules/
+
+# Arquivos de build do TypeScript
+out/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code
+.vscode-test/
+
+# Cache
+*.tsbuildinfo
+
+# Pacotes VSIX gerados
+*.vsix
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
