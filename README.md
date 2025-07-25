@@ -19,6 +19,38 @@ Ele mostra:
 
 ---
 
+
+## 🧪 Como rodar os testes
+
+### Requisitos para testar
+
+- Node.js instalado
+- Dependências de desenvolvimento instaladas:
+
+  ```bash
+  npm install --save-dev mocha @types/mocha ts-node sinon @types/sinon
+  ```
+
+- Recomenda-se rodar `npm install` para garantir todas as dependências do projeto.
+
+### Executando os testes
+
+No terminal, execute:
+
+```bash
+npm test
+```
+
+Ou, se preferir, rode apenas os testes com:
+
+```bash
+npm run test
+```
+
+Os testes estão localizados na pasta `tests/` e cobrem tanto a criação visual do item na barra de status quanto a exibição dos valores de CPU, RAM e temperatura (mockados).
+
+---
+
 ## 🚀 Como rodar em modo de desenvolvimento
 
 1. **Pré‑requisitos:**

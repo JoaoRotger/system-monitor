@@ -9,7 +9,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -25,17 +27,21 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "vscode-test --extensionDevelopmentPath=. --extensionTestsPath=./tests"
   },
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "@types/sinon": "^17.0.4",
     "@types/vscode": "^1.102.0",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
     "@vscode/test-cli": "^0.0.11",
     "@vscode/test-electron": "^2.5.2",
     "eslint": "^9.25.1",
+    "mocha": "^11.7.1",
+    "sinon": "^21.0.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
